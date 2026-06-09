@@ -1,0 +1,55 @@
+#formulari {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+}
+
+.apartatFormulari {
+    display: flex;
+    align-items: center;
+    justify-content: right;
+    border: 2px solid green;
+    border-radius: 7px;
+    width: 70%;
+    min-width: min-content;
+    padding: 1% 15% 1% 0%;
+    margin-bottom: 5px;
+    
+}
+
+.apartatFormulari label {
+    margin-right: 10px;
+}
+
+.apartatFormulari input {
+    height: 30px;
+    width: 40%;
+}
+
+.apartatFormulari textarea {
+    height: 50px;
+    width: 40%;
+}
+
+input:required, textarea:required {
+    border: 2px solid red;
+}
+
+input:required:valid, textarea:required:valid {
+    border: 2px solid green;
+}
+
+#botones {
+    padding: 1% 7.5% 1% 7.5%;
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+}
+
+#botones > button {
+    border: 2px solid black;
+    border-radius: 5px;
+    height: 30px;
+}

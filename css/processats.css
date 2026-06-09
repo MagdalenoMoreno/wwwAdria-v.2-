@@ -1,0 +1,18 @@
+.resposta {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 70%;
+    height: 50px;
+    background: linear-gradient(to right, white, rgb(255, 151, 114) 30%, rgb(255, 151, 114)70%, white);
+    border: 2px solid black;
+    border-radius: 5px;
+    margin-bottom: 5px;
+    font-size: large;
+}
+
+.resposta > span {
+    color: red;
+    font-weight: bold;
+    margin-right: 2px;
+}

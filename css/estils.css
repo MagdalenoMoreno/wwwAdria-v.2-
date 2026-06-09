@@ -1,0 +1,130 @@
+body {
+    background-image: url('/img/fondos/fondo.png');
+    padding: 20px;
+}
+
+#titulo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    background-color: white;
+    border: 4px solid red;
+    border-radius: 15px;
+    color: red;
+    width: 40%;
+    height: min-content;
+}
+
+#capsalera, #contenidoPrincipal, #menuNavegacio, footer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(to right, white, lightgreen 30%, lightgreen 70%, white);
+    border: 4px solid green;
+    margin-bottom: 15px;
+}
+
+#capsalera {
+    height: auto;
+    padding: 2% 0% 2% 0%;
+}
+
+#menuNavegacio {
+    height: 100px;
+}
+
+#menu {
+    margin: 0;
+    display: flex;
+    align-items: center;
+    align-self: center;
+    justify-content: space-around;
+    background-color: transparent;
+    border: 4px solid green;
+    border-radius: 10px;
+    width: 80%;
+    height: 60%;
+}
+
+.botoMenu {
+    min-width: min-content;
+    width: 20%;
+    height: 50%;
+    border: 2px solid red;
+    border-radius: 25px;
+    background-color: white;
+    color: blue;
+    font-size: large;
+    cursor: pointer;
+}
+
+#contenidoPrincipal {
+    height: auto;
+    padding: 2% 3% 2% 3%;
+}
+
+#contenidoPrincipal > :first-child {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 80%;
+    height: 80%;
+    background-color: transparent;
+    border: 4px solid green;
+    border-radius: 15px;
+    padding: 2% 5% 2% 5%;
+}
+
+.titolApartat {
+    width: 40%;
+    background-color: rgb(99, 235, 99);
+    border: 4px solid white;
+    border-radius: 15px;
+    color: red;
+    text-align: center;
+
+}
+
+#contenidoPrincipal p {
+    width: 70%;
+    padding: 1%;
+    background-color: white;
+    border: 4px solid green;
+    border-radius: 15px;
+    text-align: center;
+}
+
+#peuPagina {
+    height: auto;
+    padding: 2% 0% 2% 0%;
+    text-align: center;
+}
+
+#peuPagina > div {
+    width: 50%;
+    padding: 1%;
+    border: 3px solid red;
+    border-radius: 15px;
+    color: red;
+    background-color: white;
+}
+
+#contenedorImatges {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 10px;
+    width: 78%;
+    padding: 1%;
+    border: 3px solid black;
+    background-color: red;
+}
+
+#contenedorImatges > img {
+    width: 25em;
+    height: 25em;
+    object-fit: cover;
+}
