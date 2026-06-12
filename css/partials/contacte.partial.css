@@ -1,3 +1,5 @@
+/*FORMULARI*/
+
 #formulari {
     display: flex;
     flex-wrap: wrap;
@@ -52,4 +54,64 @@ input:required:valid, textarea:required:valid {
     border: 2px solid black;
     border-radius: 5px;
     height: 30px;
+}
+
+
+
+/*RESPOSTA*/
+
+.resposta {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 70%;
+    height: 50px;
+    background: linear-gradient(to right, white, rgb(255, 151, 114) 30%, rgb(255, 151, 114)70%, white);
+    border: 2px solid black;
+    border-radius: 5px;
+    margin-bottom: 5px;
+    font-size: large;
+}
+
+.resposta > span {
+    color: red;
+    font-weight: bold;
+    margin-right: 2px;
+}
+
+#missatge {
+    height: min-content;
+    padding: 1% 0 1% 0;
+}
+
+#contenidorMissatge {
+    list-style-type: none;
+    width: 70%;
+}
+
+.missatgeComu {
+    display: inline-block;
+    background-color: blanchedalmond;
+    border: 2px solid orange;
+    color: orange;
+    margin: 3px;
+    padding: 2px;
+}
+
+.missatgeEspecial {
+    display: inline-block;
+    background-color: green;
+    border: 2px solid yellow;
+    color: yellow;
+    margin: 3px;
+    padding: 2px;
+}
+
+.missatgeLlarg {
+    display: inline-block;
+    background-color: black;
+    border: 2px solid white;
+    color: white;
+    margin: 3px;
+    padding: 2px;
 }

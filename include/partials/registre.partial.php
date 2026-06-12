@@ -35,6 +35,16 @@
                 <option value="100">100€</option>
             </select>
         </div>
+        <div class="apartatFormulari">
+            <label for="apadrinar">Animal a apadrinar:</label>
+            <select name="apadrinar" id="apadrinar">
+                <option value="" disabled selected>-- Tria una opció --</option>
+                <option value="orangutan">Orangutan</option>
+                <option value="rinoceronte">Rinoceronte</option>
+                <option value="tigre">Tigre</option>
+                <option value="tortuga">Tortuga</option>
+            </select>
+        </div>
         <div id="radios" class="apartatFormulari">
             <label for="continent">Continent:</label>
             Europa: <input type="radio" name="continent" value="europa">
@@ -42,6 +52,16 @@
             Àfrica: <input type="radio" name="continent" value="africa">
             Amèrica: <input type="radio" name="continent" value="america">
             Oceania: <input type="radio" name="continent" value="oceania">
+        </div>
+        <div id="estil" class="apartatFormulari">
+            <label for="estils">Estils Registre:</label>
+            <input type="radio" name="estils" value="roig">Roig
+            <input type="radio" name="estils" value="marro">Marró
+        </div>
+        <div id="puntuar" class="apartatFormulari">
+            <label for="puntuacio">Puntua la pàgina (1-5)</label>
+            <input type="number" min="1" max="5" name="numero" value="1">
+            <input type="range" min="1" max="100" name="rango" value="1">
         </div>
         <div id="botones" class="apartatFormulari">
             <button type="submit">Envia</button>

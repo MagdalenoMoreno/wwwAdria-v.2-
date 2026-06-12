@@ -1,19 +1,24 @@
 <?php
 
-    $nom         = (isset($_POST["nom"]) && !empty($_POST["nom"])) ? trim(htmlspecialchars($_POST["nom"])) : 'Valor Buit'; 
-    $cognom      = (isset($_POST["cognom"]) && !empty($_POST["cognom"])) ? trim(htmlspecialchars($_POST["cognom"])) : 'Valor Buit';
-    $direccion   = (isset($_POST["direccion"]) && !empty($_POST["direccion"])) ? trim(htmlspecialchars($_POST["direccion"])) : 'Valor Buit';
-    $correu      = (isset($_POST["correu"]) && !empty($_POST["correu"])) ? trim(htmlspecialchars($_POST["correu"])) : 'Valor Buit';
-    $contrasenya = (isset($_POST["contrasenya"]) && !empty($_POST["contrasenya"])) ? trim(htmlspecialchars($_POST["contrasenya"])) : 'Valor Buit';
-    $telefon     = (isset($_POST["telefon"]) && !empty($_POST["telefon"])) ? trim(htmlspecialchars($_POST["telefon"])) : 'Valor Buit';
-    $donacio     = (isset($_POST["donacio"]) && !empty($_POST["donacio"])) ? trim(htmlspecialchars($_POST["donacio"])) : 'Valor Buit';
-    $continent   = (isset($_POST["continent"]) && !empty($_POST["continent"])) ? trim(htmlspecialchars($_POST["continent"])) : 'Valor Buit';
+    $nom              = (isset($_POST["nom"]) && !empty($_POST["nom"])) ? trim(htmlspecialchars($_POST["nom"])) : 'Valor Buit'; 
+    $cognom           = (isset($_POST["cognom"]) && !empty($_POST["cognom"])) ? trim(htmlspecialchars($_POST["cognom"])) : 'Valor Buit';
+    $direccion        = (isset($_POST["direccion"]) && !empty($_POST["direccion"])) ? trim(htmlspecialchars($_POST["direccion"])) : 'Valor Buit';
+    $correu           = (isset($_POST["correu"]) && !empty($_POST["correu"])) ? trim(htmlspecialchars($_POST["correu"])) : 'Valor Buit';
+    $contrasenya      = (isset($_POST["contrasenya"]) && !empty($_POST["contrasenya"])) ? trim(htmlspecialchars($_POST["contrasenya"])) : 'Valor Buit';
+    $telefon          = (isset($_POST["telefon"]) && !empty($_POST["telefon"])) ? trim(htmlspecialchars($_POST["telefon"])) : 'Valor Buit';
+    $donacio          = (isset($_POST["donacio"]) && !empty($_POST["donacio"])) ? trim(htmlspecialchars($_POST["donacio"])) : 'Valor Buit';
+    $fotoAnimal       = (isset($_POST["apadrinar"]) && !empty($_POST["apadrinar"])) ? (trim(htmlspecialchars($_POST["apadrinar"])) . '.jpg') : 'usuarioGato.png';
+    $continent        = (isset($_POST["continent"]) && !empty($_POST["continent"])) ? trim(htmlspecialchars($_POST["continent"])) : 'Valor Buit';
+    $estil            = (isset($_POST["estils"]) && !empty($_POST["estils"])) ? (trim(htmlspecialchars($_POST["estils"])) . '.css') : 'estils.css';
+    $numero           = (isset($_POST["numero"]) && !empty($_POST["numero"])) ? (trim(htmlspecialchars($_POST["numero"]))) : 1;
+    $rango             = (isset($_POST["rango"]) && !empty($_POST["rango"])) ? (trim(htmlspecialchars($_POST["rango"]))) : 1;
 
 ?>
 <html>
     <head>
         <link rel="stylesheet" href="/css/estils.css">
-        <link rel="stylesheet" href="/css/processats.css">
+        <link rel="stylesheet" href="/css/partials/registre.partial.css">
+        <link rel="stylesheet" href="/css/<?= $estil ?>">
     </head>
     <body>
         <?= include 'partials/cap.partial.php' ?>
@@ -48,9 +53,27 @@
                     <span>Donació: </span>
                     <?php echo $donacio ?>
                 </div>
+                <div class="resposta" id="animalApadrinat">
+                    <span>Animal a apadrinar: </span>
+                    <img src="/img/animales/<?= $fotoAnimal ?>" alt="" width="400px">
+                </div>
                 <div class="resposta">
                     <span>Continent: </span>
                     <?php echo ucfirst($continent) ?>
+                </div>
+                <div class="resposta" id="huellas">
+                    <span>Puntuació: </span>
+                    <div id="numeroHuellas">
+                        <?= $numero . '*' . $rango; ?>
+                    </div>
+                    <div id="contenedorHuellas">
+                        <?php 
+                            for ($i=0; $i < ($numero * $rango); $i++) { 
+                                echo '<img src="/img/huellas/Pata' . $numero . '.png" width="30px">';
+                            }
+                        ?>
+                    </div>
+                    
                 </div>
             </div>
         </main>
