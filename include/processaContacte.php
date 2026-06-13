@@ -26,21 +26,39 @@
                 </div>
                 <div class="resposta" id="missatge">
                     <span>Missatge: </span>
-                    <ul id="contenidorMissatge">
+                    <table id="contenidorMissatge">
                         <?php  
                             $arrayMissatge = explode(' ', $missatge);
-                            foreach ($arrayMissatge as $paraula) {
-                                if (strlen($paraula) >= 10) {
-                                    echo '<li class="missatgeLlarg">' . $paraula . '</li>';
-                                } else if (strcasecmp($paraula, 'apadrinar') === 0 || strcasecmp($paraula, 'animal') === 0) {
-                                    echo '<li class="missatgeEspecial">' . $paraula . '</li>';
-                                } else {
-                                    echo '<li class="missatgeComu">' . $paraula . '</li>';
+                            $columnes = ceil(sqrt(count($arrayMissatge)));
+                            $files = $columnes;
+                            if (count($arrayMissatge) > 36) {
+                                $columnes = 6;
+                                $files = count($arrayMissatge) / $columnes;
+                            }
+                            
+                            $contador = 0;
+                            for ($i=0; $i < $files; $i++) { 
+                                echo '<tr>';
+                                for ($j=0; $j < $columnes; $j++) { 
+                                    $random = random_int(1, 5);
+                                    echo '<td class="fons' . $random . '">';
+                                    if (!empty($arrayMissatge[$contador])) {
+                                        if (strlen($arrayMissatge[$contador]) >= 10) {
+                                            echo '<li class="missatgeLlarg">' . $arrayMissatge[$contador] . '</li>';
+                                        } else if (strcasecmp($arrayMissatge[$contador], 'apadrinar') === 0 || strcasecmp($arrayMissatge[$contador], 'animal') === 0) {
+                                            echo '<li class="missatgeEspecial">' . $arrayMissatge[$contador] . '</li>';
+                                        } else {
+                                            echo '<li class="missatgeComu">' . $arrayMissatge[$contador] . '</li>';
+                                        }
+                                    }
+
+                                    echo '</td>';
+                                    $contador++;
                                 }
-                            }  
+                                echo '</tr>';
+                            }
                         ?>
-                    </div>
-                    
+                    </table>
                 </div>
             </div>
         </main>

@@ -1,7 +1,18 @@
+<?php 
+    include 'data.partial.php' 
+    
+?>
 <header id="capsalera">
     <div id="titulo">
         <h1>Apadrina un animal en perill d'extinció</h1>
     </div>
+    <div id="data">
+        <?php
+            /** @var string $data */
+            echo '<span>' .  $data . '</span>'; 
+        ?>
+    </div>
+    
 </header> 
 <nav id="menuNavegacio">
     <form action="/index.php" method="GET" id="menu">

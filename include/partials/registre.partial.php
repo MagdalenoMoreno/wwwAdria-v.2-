@@ -47,9 +47,9 @@
         </div>
         <div id="radios" class="apartatFormulari">
             <label for="continent">Continent:</label>
-            Europa: <input type="radio" name="continent" value="europa">
-            Àsia: <input type="radio" name="continent" value="asia">
-            Àfrica: <input type="radio" name="continent" value="africa">
+            Europa:  <input type="radio" name="continent" value="europa">
+            Àsia:    <input type="radio" name="continent" value="asia">
+            Àfrica:  <input type="radio" name="continent" value="africa">
             Amèrica: <input type="radio" name="continent" value="america">
             Oceania: <input type="radio" name="continent" value="oceania">
         </div>
@@ -62,6 +62,17 @@
             <label for="puntuacio">Puntua la pàgina (1-5)</label>
             <input type="number" min="1" max="5" name="numero" value="1">
             <input type="range" min="1" max="100" name="rango" value="1">
+        </div>
+        <div class="apartatFormulari" id="animalMes">
+            <label for="animalsDelMes">Animal en perill del mes:</label>
+            <div id="divInputsAnimalMes">
+                <input type="checkbox" name="animalMes[]" value="elefant">Elefant afrià de bosc<br>
+                <input type="checkbox" name="animalMes[]" value="lleopard" >LLeopard d'Amur<br>
+                <input type="checkbox" name="animalMes[]" value="marsopa" >Marsopa de Califòrnia<br>
+                <input type="checkbox" name="animalMes[]" value="mussol" >Mussol de Blewitt<br>
+                <input type="checkbox" name="animalMes[]" value="pangoli" >Pangolí Malai<br>
+                <input type="checkbox" name="animalMes[]" value="saola" >Saolà<br>
+            </div>
         </div>
         <div id="botones" class="apartatFormulari">
             <button type="submit">Envia</button>
