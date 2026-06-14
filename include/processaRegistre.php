@@ -1,5 +1,5 @@
 <?php
-
+    include 'funcions.php';
     include "dadesAnimals.php";
     /** @var array $dadesAnimals */
 
@@ -16,6 +16,8 @@
     $numero           = isset($_POST["numero"]) && !empty($_POST["numero"])             ? $_POST["numero"]                              : 1;
     $rango            = isset($_POST["rango"]) && !empty($_POST["rango"])               ? $_POST["rango"]                               : 1;
     $animalsDelMes    = isset($_POST["animalMes"])                                      ? $_POST["animalMes"]                           : [];     
+
+    registreAccions('REGISTRE', $correu);
 
 ?>
 <html>
@@ -63,33 +65,36 @@
                         if (empty($animalApadrinat)) {
                             echo '<img src="/img/animales/usuarioGato.png" width="400px">';
                         } else {
-                            echo '<span id="nomAnimal">' . $dadesAnimals[$animalApadrinat]['nom'] . '</span>';
-                            echo '<img src="/img/animales/' . $animalApadrinat . '.jpg" width="400px">';
+                            echo<<<HTML
+                                <span id="nomAnimal">{$dadesAnimals[$animalApadrinat]['nom']}</span>
+                                <img src="/img/animales/$animalApadrinat.jpg" width="400px">
+                                <table id="taulaDadesAnimals">
+                                    <tr>
+                                        <th colspan="2" id="titolTaula">Dades de l'animal:</th>
+                                    </tr>
+                                    <tr>
+                                        <th>Nom científic</th>
+                                        <td>{$dadesAnimals[$animalApadrinat]['nomCientific']}</td>
+                                    </tr>
+                                    <tr>
+                                        <th>Estat de conservació</th>
+                                        <td>{$dadesAnimals[$animalApadrinat]['estat']}</td>
+                                    </tr>
+                                        <th>Hàbitat</th>
+                                        <td>{$dadesAnimals[$animalApadrinat]['habitat']}</td>
+                                    <tr>
+                                        <th>Alimentació</th>
+                                        <td>{$dadesAnimals[$animalApadrinat]['alimentacio']}</td>
+                                    </tr>
+                                    <tr>
+                                        <th>Descripció</th>
+                                        <td>{$dadesAnimals[$animalApadrinat]['descripcio']}</td>
+                                    </tr>
+                                </table>
+                            HTML;
                         }
                     ?>
-                    <table id="taulaDadesAnimals">
-                        <tr>
-                            <th colspan="2" id="titolTaula">Dades de l'animal:</th>
-                        </tr>
-                        <tr>
-                            <th>Nom científic</th>
-                            <td><?= $dadesAnimals[$animalApadrinat]['nomCientific'] ?></td>
-                        </tr>
-                        <tr>
-                            <th>Estat de conservació</th>
-                            <td><?= $dadesAnimals[$animalApadrinat]['estat'] ?></td>
-                        </tr>
-                            <th>Hàbitat</th>
-                            <td><?= $dadesAnimals[$animalApadrinat]['habitat'] ?></td>
-                        <tr>
-                            <th>Alimentació</th>
-                            <td><?= $dadesAnimals[$animalApadrinat]['alimentacio'] ?></td>
-                        </tr>
-                        <tr>
-                            <th>Descripció</th>
-                            <td><?= $dadesAnimals[$animalApadrinat]['descripcio'] ?></td>
-                        </tr>
-                    </table>
+                    
                 </div>
                 <div class="resposta">
                     <span>Continent: </span>
@@ -113,7 +118,7 @@
                     <div id="fotosAnimalsMes">
                         <?php
                             if (count($animalsDelMes) < 1) {
-                                echo '<img src="/img/animales/usuarioGato.png" width="300px" height="300px">';
+                                echo '<img src="/img/animales/usuarioGato.png" width="400px" height="300px">';
                             } else {
                                 foreach ($animalsDelMes as $animal) {
                                     echo '<img src="/img/animales/' . $animal . '.jpg" width="300px" height="300px">';

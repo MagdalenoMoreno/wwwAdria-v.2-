@@ -1,8 +1,11 @@
 <?php
+    include 'funcions.php';
 
     $correu   = (isset($_POST["correu"]) && !empty($_POST["correu"])) ? trim(htmlspecialchars($_POST["correu"])) : 'Valor Buit'; 
     $assumpte = (isset($_POST["assumpte"]) && !empty($_POST["assumpte"])) ? trim(htmlspecialchars($_POST["assumpte"])) : 'Valor Buit';
     $missatge = (isset($_POST["missatge"]) && !empty($_POST["missatge"])) ? trim(htmlspecialchars($_POST["missatge"])) : 'Valor Buit';
+
+    registreAccions('CONTACTE', $correu);
 
 ?>
 
