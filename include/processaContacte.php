@@ -1,11 +1,25 @@
 <?php
+    session_start();
+
     include 'funcions.php';
+    
+    $_SESSION['correu']   = !empty($_POST["correu"])   ? trim(htmlspecialchars($_POST["correu"]))   : ($_SESSION['correu']   ?? 'Valor Buit');
+    $_SESSION['assumpte'] = !empty($_POST["assumpte"]) ? trim(htmlspecialchars($_POST["assumpte"])) : ($_SESSION['assumpte'] ?? 'Valor Buit');
+    $_SESSION['missatge'] = !empty($_POST["missatge"]) ? trim(htmlspecialchars($_POST["missatge"])) : ($_SESSION['missatge'] ?? 'Valor Buit');
 
-    $correu   = (isset($_POST["correu"]) && !empty($_POST["correu"])) ? trim(htmlspecialchars($_POST["correu"])) : 'Valor Buit'; 
-    $assumpte = (isset($_POST["assumpte"]) && !empty($_POST["assumpte"])) ? trim(htmlspecialchars($_POST["assumpte"])) : 'Valor Buit';
-    $missatge = (isset($_POST["missatge"]) && !empty($_POST["missatge"])) ? trim(htmlspecialchars($_POST["missatge"])) : 'Valor Buit';
+    if (isset($_GET['apartat'])) {
+        $_SESSION['apartat'] = $_GET['apartat'];
+    } elseif (!isset($_SESSION['apartat'])) {
+        $_SESSION['apartat'] = 'inici';
+    }
 
-    registreAccions('CONTACTE', $correu);
+    if (isset($_GET['estil'])) {
+        $_SESSION['estil'] = $_GET['estil'] . '.css';
+    } elseif (!isset($_SESSION['estil'])) {
+        $_SESSION['estil'] = 'estils.css';
+    }
+
+    registreAccions('CONTACTE', $_SESSION['correu']);
 
 ?>
 
@@ -13,6 +27,8 @@
     <head>
         <link rel="stylesheet" href="/css/estils.css">
         <link rel="stylesheet" href="/css/partials/contacte.partial.css">
+        <link rel="stylesheet" href="/css/<?= $_SESSION['estil'] ?>">
+        
     </head>
     <body>
         <?= include 'partials/cap.partial.php' ?>
@@ -21,17 +37,17 @@
                 <h2 class="titolApartat">Dades de Missatge de Contacte</h2>
                 <div class="resposta">
                     <span>Correu electònic:  </span>
-                    <?php echo $correu ?>
+                    <?php echo $_SESSION['correu'] ?>
                 </div>
                 <div class="resposta">
                     <span>Assumpte: </span>
-                    <?php echo ucfirst($assumpte) ?>
+                    <?php echo ucfirst($_SESSION['assumpte']) ?>
                 </div>
                 <div class="resposta" id="missatge">
                     <span>Missatge: </span>
                     <table id="contenidorMissatge">
                         <?php  
-                            $arrayMissatge = explode(' ', $missatge);
+                            $arrayMissatge = explode(' ', $_SESSION['missatge']);
                             $columnes = ceil(sqrt(count($arrayMissatge)));
                             $files = $columnes;
                             if (count($arrayMissatge) > 36) {

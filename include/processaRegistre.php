@@ -1,35 +1,54 @@
 <?php
+
+    session_start();
+
     include 'funcions.php';
     include "dadesAnimals.php";
     /** @var array $dadesAnimals */
 
-    $nom              = isset($_POST["nom"]) && !empty($_POST["nom"])                   ? trim(htmlspecialchars($_POST["nom"]))         : 'Valor Buit'; 
-    $cognom           = isset($_POST["cognom"]) && !empty($_POST["cognom"])             ? trim(htmlspecialchars($_POST["cognom"]))      : 'Valor Buit';
-    $direccion        = isset($_POST["direccion"]) && !empty($_POST["direccion"])       ? trim(htmlspecialchars($_POST["direccion"]))   : 'Valor Buit';
-    $correu           = isset($_POST["correu"]) && !empty($_POST["correu"])             ? trim(htmlspecialchars($_POST["correu"]))      : 'Valor Buit';
-    $contrasenya      = isset($_POST["contrasenya"]) && !empty($_POST["contrasenya"])   ? trim(htmlspecialchars($_POST["contrasenya"])) : 'Valor Buit';
-    $telefon          = isset($_POST["telefon"]) && !empty($_POST["telefon"])           ? trim(htmlspecialchars($_POST["telefon"]))     : 'Valor Buit';
-    $donacio          = isset($_POST["donacio"]) && !empty($_POST["donacio"])           ? $_POST["donacio"]                             : 'Valor Buit';
-    $animalApadrinat  = isset($_POST["apadrinar"]) && !empty($_POST["apadrinar"])       ? ($_POST["apadrinar"])                         : '';
-    $continent        = isset($_POST["continent"]) && !empty($_POST["continent"])       ? $_POST["continent"]                           : 'Valor Buit';
-    $estil            = isset($_POST["estils"]) && !empty($_POST["estils"])             ? ($_POST["estils"] . '.css')                   : 'estils.css';
-    $numero           = isset($_POST["numero"]) && !empty($_POST["numero"])             ? $_POST["numero"]                              : 1;
-    $rango            = isset($_POST["rango"]) && !empty($_POST["rango"])               ? $_POST["rango"]                               : 1;
-    $animalsDelMes    = isset($_POST["animalMes"])                                      ? $_POST["animalMes"]                           : [];     
+    $_SESSION['nom']             = $nom              = !empty($_POST["nom"])          ? trim(htmlspecialchars($_POST["nom"]))          : ($_SESSION['nom']             ?: 'Valor Buit');
+    $_SESSION['cognom']          = $cognom           = !empty($_POST["cognom"])       ? trim(htmlspecialchars($_POST["cognom"]))       : ($_SESSION['cognom']          ?: 'Valor Buit');
+    $_SESSION['direccion']       = $direccion        = !empty($_POST["direccion"])    ? trim(htmlspecialchars($_POST["direccion"]))    : ($_SESSION['direccion']       ?: 'Valor Buit');
+    $_SESSION['correu']          = $correu           = !empty($_POST["correu"])       ? trim(htmlspecialchars($_POST["correu"]))       : ($_SESSION['correu']          ?: 'Valor Buit');
+    $_SESSION['contrasenya']     = $contrasenya      = !empty($_POST["contrasenya"])  ? trim(htmlspecialchars($_POST["contrasenya"]))  : ($_SESSION['contrasenya']     ?: 'Valor Buit');
+    $_SESSION['telefon']         = $telefon          = !empty($_POST["telefon"])      ? trim(htmlspecialchars($_POST["telefon"]))      : ($_SESSION['telefon']         ?: 'Valor Buit');
+    $_SESSION['donacio']         = $donacio          = !empty($_POST["donacio"])      ? trim(htmlspecialchars($_POST["donacio"]))      : ($_SESSION['donacio']         ?: 'Valor Buit');
+    $_SESSION['animalApadrinat'] = $animalApadrinat  = !empty($_POST["apadrinar"])    ? trim(htmlspecialchars($_POST["apadrinar"]))    : ($_SESSION['animalApadrinat'] ?: '');
+    $_SESSION['continent']       = $continent        = !empty($_POST["continent"])    ? trim(htmlspecialchars($_POST["continent"]))    : ($_SESSION['continent']       ?: 'Valor Buit');
+    $_SESSION['numero']          = $numero           = !empty($_POST["numero"])       ? trim(htmlspecialchars($_POST["numero"]))       : ($_SESSION['numero']          ?: 1);
+    $_SESSION['rango']           = $rango            = !empty($_POST["rango"])        ? trim(htmlspecialchars($_POST["rango"]))        : ($_SESSION['rango']           ?: 1);
+    $_SESSION['animalMes']       = $animalsDelMes    = !empty($_POST["animalMes"])    ? $_POST["animalMes"]                            : ($_SESSION['animalMes']       ?: []);
+    
+    $apartat = '';
+    if (isset($_GET['apartat'])) {
+        $_SESSION['apartat'] = $apartat = $_GET['apartat'];
+    } elseif (!isset($_SESSION['apartat'])) {
+        $_SESSION['apartat'] = $apartat = 'inici';
+    }
+
+    $estil = '';
+    if (isset($_GET['estil'])) {
+        $_SESSION['estil'] = $estil = $_GET['estil'] . '.css';
+    } elseif (!empty($_GET['estil'])) {
+        $_SESSION['estil'] = $estil = $_POST['estil'] . '.css';
+    } else {
+        $_SESSION['estil'] = $estil = $_SESSION['estil'] ?? 'estils.css';
+    }
 
     registreAccions('REGISTRE', $correu);
-
+    $missatgeInsercio = insereixUsuari($nom, $cognom, $correu, $contrasenya);
 ?>
 <html>
     <head>
         <link rel="stylesheet" href="/css/estils.css">
         <link rel="stylesheet" href="/css/partials/registre.partial.css">
-        <link rel="stylesheet" href="/css/<?= $estil ?>">
+        <link rel="stylesheet" href="/css/<?= $_SESSION['estil'] ?>">
     </head>
     <body>
-        <?= include 'partials/cap.partial.php' ?>
+        <?php include 'partials/cap.partial.php' ?>
         <main id="contenidoPrincipal">
             <div>
+                <?php echo "<h2 id='missatgeSql'>" . $missatgeInsercio . "</h2>"; ?>
                 <h2 class="titolApartat">Dades de Registre d'Usuari</h2>
                 <div class="resposta">
                     <span>Nom:  </span>
@@ -67,7 +86,7 @@
                         } else {
                             echo<<<HTML
                                 <span id="nomAnimal">{$dadesAnimals[$animalApadrinat]['nom']}</span>
-                                <img src="/img/animales/$animalApadrinat.jpg" width="400px">
+                                <img src="/img/animales/{$animalApadrinat}.jpg" width="400px">
                                 <table id="taulaDadesAnimals">
                                     <tr>
                                         <th colspan="2" id="titolTaula">Dades de l'animal:</th>
@@ -129,6 +148,6 @@
                 </div>
             </div>
         </main>
-        <?= include 'partials/peu.partial.php' ?>
+        <?php include 'partials/peu.partial.php' ?>
     </body>
 </html>
