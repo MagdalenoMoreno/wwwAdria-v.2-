@@ -31,7 +31,12 @@
         
     </head>
     <body>
-        <?= include 'partials/cap.partial.php' ?>
+        <?php 
+            include 'partials/cap.partial.php'; 
+            if (!isset($_SESSION['admin']) || $_SESSION['admin'] === false) {
+                include 'partials/menu.partial.php';
+            }
+        ?>
         <main id="contenidoPrincipal">
             <div>
                 <h2 class="titolApartat">Dades de Missatge de Contacte</h2>

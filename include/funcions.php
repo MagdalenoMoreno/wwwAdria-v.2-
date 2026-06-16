@@ -2,6 +2,8 @@
 
     /* FITXERS */
 
+use BcMath\Number;
+
     function registreApartat(string $apartat): void 
     {
         comprobarEstructuraCarpetas();
@@ -78,7 +80,8 @@
 
         try {
             $conexion = mysqli_connect($ruta, $usuari, $passwd, $bbdd);
-            mysqli_query($conexion, "INSERT INTO usuari (nom, cognoms, email, contrasenya) VALUES('$nom', '$cognoms', '$email', '$contrasenya')");
+            $contrasenyaXifrada = password_hash($contrasenya, PASSWORD_ARGON2I);
+            mysqli_query($conexion, "INSERT INTO usuari (nom, cognoms, email, contrasenya) VALUES('$nom', '$cognoms', '$email', '$contrasenyaXifrada')");
             return "Usuari " . $email . " inserit correctament en la base de dades";
         } catch (Exception $e) {
             return "Error: Usuari " . $email . " no s'ha pogut inserir correctament en la base de dades. " . $e;
@@ -112,10 +115,47 @@
 
         try {
             $conexion = mysqli_connect($ruta, $usuari, $passwd, $bbdd);
-            $result = mysqli_query($conexion, "SELECT * FROM usuari WHERE email LIKE '$email' AND contrasenya LIKE '$contrasenya'");
-            return mysqli_fetch_assoc($result);
+            $result = mysqli_query($conexion, "SELECT * FROM usuari WHERE email LIKE '$email'");
+            $user = mysqli_fetch_assoc($result);
+            if (password_verify($contrasenya, $user['contrasenya'])) {
+                return $user;
+            }
+            return null;
         } catch (Exception $e) {
             return ['error' => 'Error interno del servidor'];
+        }
+    }
+
+    function getAllUsers(): ?array
+    {
+        $ruta = 'localhost';
+        $usuari = 'adria';
+        $passwd = '1234';
+        $bbdd = 'projectePHP';
+
+        try {
+            $conexion = mysqli_connect($ruta, $usuari, $passwd, $bbdd);
+            $result = mysqli_query($conexion, "SELECT * FROM usuari");
+            return mysqli_fetch_all($result, MYSQLI_ASSOC);
+        } catch (Exception $e) {
+            return ['error' => 'Error interno del servidor'];
+        }
+    }
+
+    function deleteUser(string $id): bool 
+    {
+        $ruta = 'localhost';
+        $usuari = 'adria';
+        $passwd = '1234';
+        $bbdd = 'projectePHP';
+
+        try {
+            $conexion = mysqli_connect($ruta, $usuari, $passwd, $bbdd);
+            $idNumero = (int) $id;
+            mysqli_query($conexion, "DELETE FROM usuari WHERE id = $idNumero");
+            return true;
+        } catch (Exception $e) {
+            return false;
         }
     }
 

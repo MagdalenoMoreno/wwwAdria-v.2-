@@ -52,7 +52,13 @@
         <link rel="stylesheet" href="/css/<?= $_SESSION['estil'] ?>">
     </head>
     <body>
-        <?php include 'partials/cap.partial.php' ?>
+        <?php 
+            include 'partials/cap.partial.php'; 
+            if (!isset($_SESSION['admin']) || $_SESSION['admin'] === false) {
+                include 'partials/menu.partial.php';
+            }
+        ?>
+        
         <main id="contenidoPrincipal">
             <div>
                 <?php echo "<h2 id='missatgeSql'>" . $missatgeInsercio . "</h2>"; ?>
