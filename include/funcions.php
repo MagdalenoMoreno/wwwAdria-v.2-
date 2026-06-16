@@ -178,5 +178,24 @@ use BcMath\Number;
         echo "<span class='contenidorError'>".$missatgeError."</span>";
     }
 
+    
+    /* ANIMALS */
+    
+    function getAllAnimals(): ?array 
+    {
+        $ruta = 'localhost';
+        $usuari = 'adria';
+        $passwd = '1234';
+        $bbdd = 'projectePHP';
+
+        try {
+            $conexion = mysqli_connect($ruta, $usuari, $passwd, $bbdd);
+            $result = mysqli_query($conexion, "SELECT * FROM animal");
+            return mysqli_fetch_all($result, MYSQLI_ASSOC);
+        } catch (Exception $e) {
+            return ['error' => 'Error interno del servidor'];
+        }
+    }
+
 
 ?>

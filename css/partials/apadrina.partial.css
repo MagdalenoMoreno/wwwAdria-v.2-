@@ -1,33 +1,89 @@
-#fondoCinta {
-    position: relative;
-    margin-top: 10px;
-    border-radius: 10px;
-    border: 1px solid black;
-    width: 40%;
-    overflow: hidden;
-}
-
-#fondoCinta img {
-    display: block;
+#animalsDisponibles {
     width: 100%;
+    display: grid;
+    grid-template-columns: repeat(3, auto);
+    background-color: rgb(118, 216, 118);
+    border-radius: 10px;
+    padding: 10px 20px 10px 20px;
+    gap: 10px;
 }
 
-#fondoCinta h1 {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    background-color: white;
+.cardAnimal {
+    border: 1px solid black;
+    background-color: rgb(189, 235, 117);
+    display: flex;
+    flex-direction: column;
+    border-radius: 10px;
+    padding: 20px;
+    row-gap: 10px;
+    align-items: center;
+}
+
+.idAnimal {
+    background-color: rgb(235, 193, 103);
+    border: 3px solid red;
     color: red;
-    border: 4px solid red;
-    border-radius: 15px;
-    margin: 0;
-    padding: 5px 10px;
-    white-space: nowrap;
+    border-radius: 10px;
+    width: 20%;
+    text-align: center;
 }
 
-main > div > img {
-    margin-top: 20px;
-    width: 40%;
-    height: 500px;
+.nomComu {
+    width: 100%;
+    background-color: white;
+    border: 3px solid darkblue;
+    color: darkblue;
+    border-radius: 10px;
+    text-align: center;
+}
+
+.nomCientific {
+    width: 95%;
+    text-align: right;
+    color: blue;
+}
+
+.descripcio {
+    width: 100%;
+    background-color: white;
+    border: 3px solid black;
+    border-radius: 10px;
+    height: 100px;
+    padding: 5px;
+}
+
+.donacio {
+    width: 30%;
+    background-color: rgba(197, 248, 197, 0.562);
+    border: 3px solid green;
+    border-radius: 10px;
+    padding: 5px;
+    text-align: center;
+    justify-self: center;
+}
+
+.formAnimal {
+    width: 100%;
+    padding: 10px;
+    background-color: lightcoral;
+    border: 3px solid red;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    row-gap: 5px;
+}
+
+.formAnimal label {
+    font-weight: bold;
+    color: blue;
+}
+
+.formAnimal input {
+    width: 100px;
+}
+
+.formAnimal button {
+    height: 30px;
+    width: 190px;
 }
