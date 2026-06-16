@@ -22,6 +22,15 @@
             <input type="password" name="contrasenya" required>
         </div>
         <div class="apartatFormulari">
+            <label for="confirmaContrasenya">Confirmar contrasenya:</label>
+            <div id="divConfirmarContrasenya">
+                <input type="password" name="confirmaContrasenya" required><br>
+                <?php
+                    if ($error === "contrasenya") mostrarError($error);
+                ?>
+            </div>
+        </div>
+        <div class="apartatFormulari">
             <label for="telefon">Telèfon:</label>
             <input type="tel" name="telefon" pattern="[0-9]{3}[\s-]*[0-9]{3}[\s-]*[0-9]{3}">
         </div>
@@ -52,11 +61,6 @@
             Àfrica:  <input type="radio" name="continent" value="africa">
             Amèrica: <input type="radio" name="continent" value="america">
             Oceania: <input type="radio" name="continent" value="oceania">
-        </div>
-        <div id="estil" class="apartatFormulari">
-            <label for="estils">Estils Registre:</label>
-            <input type="radio" name="estils" value="roig">Roig
-            <input type="radio" name="estils" value="marro">Marró
         </div>
         <div id="puntuar" class="apartatFormulari">
             <label for="puntuacio">Puntua la pàgina (1-5)</label>

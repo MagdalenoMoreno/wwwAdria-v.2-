@@ -2,6 +2,9 @@
 
 session_start();
 
+include 'include/funcions.php';
+
+
 if (isset($_GET['apartat'])) {
     $_SESSION['apartat'] = $_GET['apartat'];
 } elseif (!isset($_SESSION['apartat'])) {
@@ -14,8 +17,17 @@ if (isset($_GET['estil'])) {
     $_SESSION['estil'] = 'estils.css';
 }
 
+$error = '';
+if (isset($_GET['error'])) {
+    $error = trim(htmlspecialchars($_GET['error']));
+}
+
 include 'include/partials/cap.partial.php';
-include 'include/funcions.php';
+
+if (!isset($_SESSION['admin']) || $_SESSION['admin'] === false) {
+    include 'include/partials/menu.partial.php';
+}
+
 registreApartat($_SESSION['apartat']);
 ?>
 <html>
@@ -32,7 +44,7 @@ registreApartat($_SESSION['apartat']);
             ?>
         </main>
 
-    <?= include './include/partials/peu.partial.php'; ?>
+    <?php include 'include/partials/peu.partial.php'; ?>
 
     </body>
 </html>

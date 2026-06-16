@@ -7,6 +7,12 @@
     <input type="submit" value="Canvia">
 </form>
 <?php
-    /** @var string $data */
-    echo '<span id="data">' .  $data . '</span>';
+    if (isset($_SESSION['nomUsuari'])) {
+        /** @var string $data */
+        echo '<span id="data">Hola ' . $_SESSION['nomUsuari'] . ' :: ' . $data . ' :: <a href="include/processaLogout.php">Logout</a></span>';
+    } else {
+        /** @var string $data */
+        echo '<span id="data">' .  $data . '</span>';
+    }
+
 ?>

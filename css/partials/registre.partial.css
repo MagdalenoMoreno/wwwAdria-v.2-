@@ -30,12 +30,26 @@
     width: 40%;
 }
 
-input:required {
+.contenidorError {
+    width: 40%;
+    background-color: rgb(255, 255, 181);
+    color: red;
     border: 2px solid red;
+    text-align: center;
+    padding: 3px 0 3px 0;
+    border-radius: 10px;
 }
 
-input:required:valid {
-    border: 2px solid green;
+#divConfirmarContrasenya {
+    display: flex;
+    flex-direction: column;
+    row-gap: 5px;
+    width: 40%;
+    align-items:flex-end;
+}
+
+#divConfirmarContrasenya :is(input, span) {
+    width: 100%;
 }
 
 #botones {

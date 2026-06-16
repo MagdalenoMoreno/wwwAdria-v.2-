@@ -6,18 +6,19 @@
     include "dadesAnimals.php";
     /** @var array $dadesAnimals */
 
-    $_SESSION['nom']             = $nom              = !empty($_POST["nom"])          ? trim(htmlspecialchars($_POST["nom"]))          : ($_SESSION['nom']             ?: 'Valor Buit');
-    $_SESSION['cognom']          = $cognom           = !empty($_POST["cognom"])       ? trim(htmlspecialchars($_POST["cognom"]))       : ($_SESSION['cognom']          ?: 'Valor Buit');
-    $_SESSION['direccion']       = $direccion        = !empty($_POST["direccion"])    ? trim(htmlspecialchars($_POST["direccion"]))    : ($_SESSION['direccion']       ?: 'Valor Buit');
-    $_SESSION['correu']          = $correu           = !empty($_POST["correu"])       ? trim(htmlspecialchars($_POST["correu"]))       : ($_SESSION['correu']          ?: 'Valor Buit');
-    $_SESSION['contrasenya']     = $contrasenya      = !empty($_POST["contrasenya"])  ? trim(htmlspecialchars($_POST["contrasenya"]))  : ($_SESSION['contrasenya']     ?: 'Valor Buit');
-    $_SESSION['telefon']         = $telefon          = !empty($_POST["telefon"])      ? trim(htmlspecialchars($_POST["telefon"]))      : ($_SESSION['telefon']         ?: 'Valor Buit');
-    $_SESSION['donacio']         = $donacio          = !empty($_POST["donacio"])      ? trim(htmlspecialchars($_POST["donacio"]))      : ($_SESSION['donacio']         ?: 'Valor Buit');
-    $_SESSION['animalApadrinat'] = $animalApadrinat  = !empty($_POST["apadrinar"])    ? trim(htmlspecialchars($_POST["apadrinar"]))    : ($_SESSION['animalApadrinat'] ?: '');
-    $_SESSION['continent']       = $continent        = !empty($_POST["continent"])    ? trim(htmlspecialchars($_POST["continent"]))    : ($_SESSION['continent']       ?: 'Valor Buit');
-    $_SESSION['numero']          = $numero           = !empty($_POST["numero"])       ? trim(htmlspecialchars($_POST["numero"]))       : ($_SESSION['numero']          ?: 1);
-    $_SESSION['rango']           = $rango            = !empty($_POST["rango"])        ? trim(htmlspecialchars($_POST["rango"]))        : ($_SESSION['rango']           ?: 1);
-    $_SESSION['animalMes']       = $animalsDelMes    = !empty($_POST["animalMes"])    ? $_POST["animalMes"]                            : ($_SESSION['animalMes']       ?: []);
+    $_SESSION['nom']                 = $nom                  = !empty($_POST["nom"])                 ? trim(htmlspecialchars($_POST["nom"]))                 : ($_SESSION['nom']                 ?: 'Valor Buit');
+    $_SESSION['cognom']              = $cognom               = !empty($_POST["cognom"])              ? trim(htmlspecialchars($_POST["cognom"]))              : ($_SESSION['cognom']              ?: 'Valor Buit');
+    $_SESSION['direccion']           = $direccion            = !empty($_POST["direccion"])           ? trim(htmlspecialchars($_POST["direccion"]))           : ($_SESSION['direccion']           ?: 'Valor Buit');
+    $_SESSION['correu']              = $correu               = !empty($_POST["correu"])              ? trim(htmlspecialchars($_POST["correu"]))              : ($_SESSION['correu']              ?: 'Valor Buit');
+    $_SESSION['contrasenya']         = $contrasenya          = !empty($_POST["contrasenya"])         ? trim(htmlspecialchars($_POST["contrasenya"]))         : ($_SESSION['contrasenya']         ?: 'Valor Buit');
+    $_SESSION['confirmaContrasenya'] = $confirmaContrasenya  = !empty($_POST["confirmaContrasenya"]) ? trim(htmlspecialchars($_POST["confirmaContrasenya"])) : ($_SESSION['confirmaContrasenya'] ?: 'Valor Buit');
+    $_SESSION['telefon']             = $telefon              = !empty($_POST["telefon"])             ? trim(htmlspecialchars($_POST["telefon"]))             : ($_SESSION['telefon']             ?: 'Valor Buit');
+    $_SESSION['donacio']             = $donacio              = !empty($_POST["donacio"])             ? trim(htmlspecialchars($_POST["donacio"]))             : ($_SESSION['donacio']             ?: 'Valor Buit');
+    $_SESSION['animalApadrinat']     = $animalApadrinat      = !empty($_POST["apadrinar"])           ? trim(htmlspecialchars($_POST["apadrinar"]))           : ($_SESSION['animalApadrinat']     ?: '');
+    $_SESSION['continent']           = $continent            = !empty($_POST["continent"])           ? trim(htmlspecialchars($_POST["continent"]))           : ($_SESSION['continent']           ?: 'Valor Buit');
+    $_SESSION['numero']              = $numero               = !empty($_POST["numero"])              ? trim(htmlspecialchars($_POST["numero"]))              : ($_SESSION['numero']              ?: 1);
+    $_SESSION['rango']               = $rango                = !empty($_POST["rango"])               ? trim(htmlspecialchars($_POST["rango"]))               : ($_SESSION['rango']               ?: 1);
+    $_SESSION['animalMes']           = $animalsDelMes        = !empty($_POST["animalMes"])           ? $_POST["animalMes"]                                   : ($_SESSION['animalMes']           ?: []);
     
     $apartat = '';
     if (isset($_GET['apartat'])) {
@@ -36,7 +37,13 @@
     }
 
     registreAccions('REGISTRE', $correu);
-    $missatgeInsercio = insereixUsuari($nom, $cognom, $correu, $contrasenya);
+
+    if ($contrasenya === $confirmaContrasenya) {
+        $missatgeInsercio = insereixUsuari($nom, $cognom, $correu, $contrasenya);
+    } else {
+        header('Location: ../index.php?apartat=registre&error=contrasenya');
+        die();
+    }
 ?>
 <html>
     <head>

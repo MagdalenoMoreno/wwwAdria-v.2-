@@ -65,6 +65,20 @@ body {
     color: white;
 }
 
+#formulariLogin {
+    background: linear-gradient(to bottom, purple, white);
+    margin-bottom: 10px;
+    border: 3px solid purple;
+    border-radius: 15px;
+    font-weight: bold;
+}
+
+#formulariLogin > legend {
+    background-color: white;
+    border: 3px solid purple;
+    border-radius: 10px;
+}
+
 #menuNavegacio {
     height: 100px;
 }
@@ -162,4 +176,12 @@ body {
     width: 25em;
     height: 25em;
     object-fit: cover;
+}
+
+input:required {
+    border: 2px solid red;
+}
+
+input:required:valid {
+    border: 2px solid green;
 }

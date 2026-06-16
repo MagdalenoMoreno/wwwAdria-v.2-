@@ -2,7 +2,7 @@
 
     /* FITXERS */
 
-    function registreApartat($apartat): void 
+    function registreApartat(string $apartat): void 
     {
         comprobarEstructuraCarpetas();
         chdir($_SERVER['DOCUMENT_ROOT'] . '/log');
@@ -22,7 +22,7 @@
         }
     }
 
-    function registreAccions($accio, $usuari): void 
+    function registreAccions(string $accio, string $usuari): void 
     {
         comprobarEstructuraCarpetas();
         chdir($_SERVER['DOCUMENT_ROOT'] . '/log');
@@ -56,7 +56,7 @@
         }
     }
 
-    function ferBackup($directori, $rutaFitxer): void 
+    function ferBackup(string $directori, string $rutaFitxer): void 
     {
         $ruta_backup = "$directori/backup_".date("dmY_His").".log";
         copy($rutaFitxer, $ruta_backup);
@@ -65,7 +65,7 @@
 
     /* BBDD */
 
-    function insereixUsuari($nom, $cognoms, $email, $contrasenya): string 
+    function insereixUsuari(string $nom, string $cognoms, string $email, string $contrasenya): string 
     {
         $ruta = 'localhost';
         $usuari = 'adria';
@@ -86,17 +86,56 @@
         
     }
 
-    function usuariExisteix($email): bool 
+    function usuariExisteix(string $email): bool 
     {   
         $ruta = 'localhost';
         $usuari = 'adria';
         $passwd = '1234';
         $bbdd = 'projectePHP';
 
-        $conexion = mysqli_connect($ruta, $usuari, $passwd, $bbdd);
-        $result = mysqli_query($conexion, "SELECT * FROM usuari WHERE email LIKE '$email'");
+        try {
+            $conexion = mysqli_connect($ruta, $usuari, $passwd, $bbdd);
+            $result = mysqli_query($conexion, "SELECT * FROM usuari WHERE email LIKE '$email'");
+        } catch (Exception $e) {
+            return "Error: Usuari " . $email . " no s'ha pogut inserir correctament en la base de dades. " . $e;
+        }
 
         return mysqli_num_rows($result) > 0 ? true : false;
+    }
+
+    function getUser($email, $contrasenya): ?array 
+    {
+        $ruta = 'localhost';
+        $usuari = 'adria';
+        $passwd = '1234';
+        $bbdd = 'projectePHP';
+
+        try {
+            $conexion = mysqli_connect($ruta, $usuari, $passwd, $bbdd);
+            $result = mysqli_query($conexion, "SELECT * FROM usuari WHERE email LIKE '$email' AND contrasenya LIKE '$contrasenya'");
+            return mysqli_fetch_assoc($result);
+        } catch (Exception $e) {
+            return ['error' => 'Error interno del servidor'];
+        }
+    }
+
+    function mostrarError(string $error) : void {
+        $missatgeError = "";
+        switch ($error) {
+            case 'contrasenya':
+                $missatgeError = "Les contrasenyes no coincideixen";
+                break;
+            case 'contrasenyaLogin':
+                $missatgeError = "Error en la contrasenya";
+                break;
+            case 'correuLogin':
+                $missatgeError = "No existeix cap usuari amb aquest correu";
+                break;
+            case 'connexioBD':
+                $missatgeError = "Error en la connexió a la base de dades";
+                break;
+        }
+        echo "<span class='contenidorError'>".$missatgeError."</span>";
     }
 
 
