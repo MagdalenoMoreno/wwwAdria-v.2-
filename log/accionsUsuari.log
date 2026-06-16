@@ -1,72 +1,65 @@
-1 :: L'usuari a@a ha realitzat l'acció REGISTRE el dia 15/06/2026 a l'hora 07:23:46
-2 :: L'usuari a@a ha realitzat l'acció REGISTRE el dia 15/06/2026 a l'hora 07:25:30
-3 :: L'usuari a@a ha realitzat l'acció REGISTRE el dia 15/06/2026 a l'hora 07:25:59
-4 :: L'usuari a@a ha realitzat l'acció REGISTRE el dia 15/06/2026 a l'hora 07:27:20
-5 :: L'usuari a@a ha realitzat l'acció REGISTRE el dia 15/06/2026 a l'hora 07:27:29
-6 :: L'usuari a@a ha realitzat l'acció REGISTRE el dia 15/06/2026 a l'hora 07:28:03
-7 :: L'usuari a@a ha realitzat l'acció REGISTRE el dia 15/06/2026 a l'hora 07:30:40
-8 :: L'usuari a@a ha realitzat l'acció REGISTRE el dia 15/06/2026 a l'hora 07:30:47
-9 :: L'usuari a@a ha realitzat l'acció REGISTRE el dia 15/06/2026 a l'hora 07:36:14
-10 :: L'usuari a@a ha realitzat l'acció REGISTRE el dia 15/06/2026 a l'hora 11:00:35
-11 :: L'usuari a@a ha realitzat l'acció REGISTRE el dia 15/06/2026 a l'hora 11:01:19
-12 :: L'usuari a@a ha realitzat l'acció REGISTRE el dia 15/06/2026 a l'hora 11:01:30
-13 :: L'usuari a@a ha realitzat l'acció REGISTRE el dia 15/06/2026 a l'hora 11:01:37
-14 :: L'usuari a@a ha realitzat l'acció REGISTRE el dia 15/06/2026 a l'hora 11:02:00
-15 :: L'usuari a@a ha realitzat l'acció REGISTRE el dia 15/06/2026 a l'hora 11:04:11
-16 :: L'usuari a@a ha realitzat l'acció REGISTRE el dia 15/06/2026 a l'hora 11:04:42
-17 :: L'usuari a@a ha realitzat l'acció REGISTRE el dia 15/06/2026 a l'hora 11:05:54
-18 :: L'usuari a@aaa ha realitzat l'acció REGISTRE el dia 15/06/2026 a l'hora 11:06:14
-19 :: L'usuari a@aaa ha realitzat l'acció REGISTRE el dia 15/06/2026 a l'hora 11:07:45
-20 :: L'usuari a@aaa ha realitzat l'acció REGISTRE el dia 15/06/2026 a l'hora 11:07:59
-21 :: L'usuari a@aaa ha realitzat l'acció REGISTRE el dia 15/06/2026 a l'hora 11:13:17
-22 :: L'usuari a@a ha realitzat l'acció REGISTRE el dia 15/06/2026 a l'hora 11:13:42
-23 :: L'usuari a@a ha realitzat l'acció REGISTRE el dia 15/06/2026 a l'hora 11:14:38
-24 :: L'usuari a@a ha realitzat l'acció REGISTRE el dia 15/06/2026 a l'hora 11:14:44
-25 :: L'usuari a@a ha realitzat l'acció REGISTRE el dia 15/06/2026 a l'hora 11:14:58
-26 :: L'usuari a@a ha realitzat l'acció REGISTRE el dia 15/06/2026 a l'hora 11:15:58
-27 :: L'usuari a@a ha realitzat l'acció REGISTRE el dia 15/06/2026 a l'hora 11:16:25
-28 :: L'usuari a@a ha realitzat l'acció REGISTRE el dia 15/06/2026 a l'hora 11:16:32
-29 :: L'usuari a@a ha realitzat l'acció REGISTRE el dia 15/06/2026 a l'hora 11:32:01
-30 :: L'usuari a@a ha realitzat l'acció REGISTRE el dia 15/06/2026 a l'hora 11:33:05
-31 :: L'usuari a@a ha realitzat l'acció REGISTRE el dia 15/06/2026 a l'hora 11:33:51
-32 :: L'usuari a@a ha realitzat l'acció REGISTRE el dia 15/06/2026 a l'hora 11:35:35
-33 :: L'usuari a@a ha realitzat l'acció REGISTRE el dia 15/06/2026 a l'hora 11:36:32
-34 :: L'usuari a@a ha realitzat l'acció REGISTRE el dia 15/06/2026 a l'hora 11:39:24
-35 :: L'usuari a@a ha realitzat l'acció REGISTRE el dia 15/06/2026 a l'hora 11:39:56
-36 :: L'usuari a@a ha realitzat l'acció REGISTRE el dia 15/06/2026 a l'hora 11:40:29
-37 :: L'usuari amorrio@morrio ha realitzat l'acció REGISTRE el dia 15/06/2026 a l'hora 11:40:49
-38 :: L'usuari amorrio@morrio ha realitzat l'acció REGISTRE el dia 15/06/2026 a l'hora 11:40:53
-39 :: L'usuari amorrio@morrio ha realitzat l'acció REGISTRE el dia 15/06/2026 a l'hora 11:43:25
-40 :: L'usuari amorrio@morrio ha realitzat l'acció REGISTRE el dia 15/06/2026 a l'hora 11:43:25
-41 :: L'usuari a@a ha realitzat l'acció REGISTRE el dia 15/06/2026 a l'hora 17:34:03
-42 :: L'usuari a@a ha realitzat l'acció REGISTRE el dia 15/06/2026 a l'hora 17:35:57
-43 :: L'usuari a@aaaa ha realitzat l'acció REGISTRE el dia 15/06/2026 a l'hora 17:36:13
-44 :: L'usuari aaaa@aa ha realitzat l'acció REGISTRE el dia 15/06/2026 a l'hora 17:36:33
-45 :: L'usuari asdfsadf@asdfsadf ha realitzat l'acció REGISTRE el dia 15/06/2026 a l'hora 18:22:58
-46 :: L'usuari asdfasdfsadfasdfasdf@asdfasdf ha realitzat l'acció REGISTRE el dia 15/06/2026 a l'hora 18:23:09
-47 :: L'usuari fdafdas@fdas ha realitzat l'acció REGISTRE el dia 15/06/2026 a l'hora 18:23:42
-48 :: L'usuari a@a ha realitzat l'acció REGISTRE el dia 15/06/2026 a l'hora 21:10:44
-49 :: L'usuari a@a ha realitzat l'acció REGISTRE el dia 15/06/2026 a l'hora 21:11:12
-50 :: L'usuari a@a ha realitzat l'acció REGISTRE el dia 15/06/2026 a l'hora 21:11:33
-51 :: L'usuari a@a ha realitzat l'acció REGISTRE el dia 15/06/2026 a l'hora 21:12:16
-52 :: L'usuari a@a ha realitzat l'acció REGISTRE el dia 15/06/2026 a l'hora 21:12:33
-53 :: L'usuari a@a ha realitzat l'acció REGISTRE el dia 15/06/2026 a l'hora 21:12:40
-54 :: L'usuari a@a ha realitzat l'acció REGISTRE el dia 15/06/2026 a l'hora 21:17:02
-55 :: L'usuari a@a ha realitzat l'acció REGISTRE el dia 15/06/2026 a l'hora 21:17:12
-56 :: L'usuari aasdfasdfasdf@a ha realitzat l'acció REGISTRE el dia 15/06/2026 a l'hora 21:17:34
-57 :: L'usuari a@a ha realitzat l'acció REGISTRE el dia 15/06/2026 a l'hora 23:05:56
-58 :: L'usuari a@a ha realitzat l'acció REGISTRE el dia 15/06/2026 a l'hora 23:06:08
-59 :: L'usuari a@a ha realitzat l'acció REGISTRE el dia 15/06/2026 a l'hora 23:12:38
-60 :: L'usuari aMorrio@collado ha realitzat l'acció REGISTRE el dia 16/06/2026 a l'hora 00:35:35
-61 :: L'usuari admin@daw.com ha realitzat l'acció REGISTRE el dia 16/06/2026 a l'hora 00:46:53
-62 :: L'usuari shbatmil@edu.com ha realitzat l'acció REGISTRE el dia 16/06/2026 a l'hora 00:48:29
-63 :: L'usuari shbatmil@edu.com ha realitzat l'acció REGISTRE el dia 16/06/2026 a l'hora 00:49:12
-64 :: L'usuari raulvall@edu.com ha realitzat l'acció REGISTRE el dia 16/06/2026 a l'hora 00:49:50
-65 :: L'usuari raulvall@edu.com ha realitzat l'acció REGISTRE el dia 16/06/2026 a l'hora 00:52:47
-66 :: L'usuari ivansanz@edu.com ha realitzat l'acció REGISTRE el dia 16/06/2026 a l'hora 00:53:16
-67 :: L'usuari ivansanz@edu.com ha realitzat l'acció REGISTRE el dia 16/06/2026 a l'hora 00:53:51
-68 :: L'usuari paulaesteve@edu.com ha realitzat l'acció REGISTRE el dia 16/06/2026 a l'hora 00:54:19
-69 :: L'usuari a@a ha realitzat l'acció REGISTRE el dia 16/06/2026 a l'hora 01:57:41
-70 :: L'usuari b@b ha realitzat l'acció REGISTRE el dia 16/06/2026 a l'hora 01:57:54
-71 :: L'usuari c@c ha realitzat l'acció REGISTRE el dia 16/06/2026 a l'hora 01:58:03
-72 :: L'usuari adriamorrio@edu.com ha realitzat l'acció REGISTRE el dia 16/06/2026 a l'hora 03:31:17
+1 :: L'usuari a@a ha realitzat l'acció REGISTRE el dia 16/06/2026 a l'hora 03:35:33
+2 :: L'usuari a@a ha realitzat l'acció CONTACTE el dia 16/06/2026 a l'hora 03:35:45
+3 :: L'usuari a@a ha realitzat l'acció CONTACTE el dia 16/06/2026 a l'hora 03:39:46
+4 :: L'usuari a@a ha realitzat l'acció LOGOUT el dia 16/06/2026 a l'hora 03:49:07
+5 :: L'usuari a@a ha realitzat l'acció LOGIN el dia 16/06/2026 a l'hora 03:50:31
+6 :: L'usuari a@a ha realitzat l'acció LOGOUT el dia 16/06/2026 a l'hora 03:50:37
+7 :: L'usuari asdfsadf@asdf ha realitzat l'acció ACCÉS INCORRECTE el dia 16/06/2026 a l'hora 03:53:34
+8 :: L'usuari a@a ha realitzat l'acció ACCÉS INCORRECTE el dia 16/06/2026 a l'hora 03:53:43
+9 :: L'usuari admin@daw.com ha realitzat l'acció ACCÉS CORRECTE el dia 16/06/2026 a l'hora 03:55:01
+10 :: L'usuari admin@daw.com ha realitzat l'acció LOGOUT el dia 16/06/2026 a l'hora 03:57:47
+11 :: L'usuari a@a ha realitzat l'acció REGISTRE el dia 16/06/2026 a l'hora 03:57:54
+12 :: L'usuari b@b ha realitzat l'acció REGISTRE el dia 16/06/2026 a l'hora 03:58:12
+13 :: L'usuari c@c ha realitzat l'acció REGISTRE el dia 16/06/2026 a l'hora 03:58:22
+14 :: L'usuari admin@daw.com ha realitzat l'acció ACCÉS CORRECTE el dia 16/06/2026 a l'hora 03:58:32
+15 :: L'usuari admin@daw.com ha realitzat l'acció ELIMINAR USUARI el dia 16/06/2026 a l'hora 03:58:37
+16 :: L'usuari admin@daw.com ha realitzat l'acció ELIMINAR USUARI el dia 16/06/2026 a l'hora 04:06:07
+17 :: L'usuari admin@daw.com ha realitzat l'acció LOGOUT el dia 16/06/2026 a l'hora 04:06:13
+18 :: L'usuari a@a ha realitzat l'acció REGISTRE el dia 16/06/2026 a l'hora 04:07:03
+19 :: L'usuari a@a ha realitzat l'acció CONTACTE el dia 16/06/2026 a l'hora 04:07:14
+20 :: L'usuari a@a ha realitzat l'acció ACCÉS CORRECTE el dia 16/06/2026 a l'hora 04:07:25
+21 :: L'usuari a@a ha realitzat l'acció LOGOUT el dia 16/06/2026 a l'hora 04:07:30
+22 :: L'usuari a@a ha realitzat l'acció ACCÉS INCORRECTE el dia 16/06/2026 a l'hora 04:07:35
+23 :: L'usuari asdfadsf@qr ha realitzat l'acció ACCÉS INCORRECTE el dia 16/06/2026 a l'hora 04:07:45
+24 :: L'usuari admin@daw.com ha realitzat l'acció ACCÉS CORRECTE el dia 16/06/2026 a l'hora 04:08:01
+25 :: L'usuari admin@daw.com ha realitzat l'acció ELIMINAR USUARI el dia 16/06/2026 a l'hora 04:08:07
+26 :: L'usuari admin@daw.com ha realitzat l'acció LOGOUT el dia 16/06/2026 a l'hora 04:12:19
+27 :: L'usuari a@a ha realitzat l'acció REGISTRE el dia 16/06/2026 a l'hora 04:12:27
+28 :: L'usuari admin@daw.com ha realitzat l'acció ACCÉS CORRECTE el dia 16/06/2026 a l'hora 04:12:38
+29 :: L'usuari admin@daw.com ha realitzat l'acció ELIMINAR USUARI A@A el dia 16/06/2026 a l'hora 04:12:48
+30 :: L'usuari admin@daw.com ha realitzat l'acció LOGOUT el dia 16/06/2026 a l'hora 04:22:57
+31 :: L'usuari a@a ha realitzat l'acció ACCÉS INCORRECTE el dia 16/06/2026 a l'hora 04:23:05
+32 :: L'usuari admin@daw.com ha realitzat l'acció ACCÉS CORRECTE el dia 16/06/2026 a l'hora 04:23:14
+33 :: L'usuari admin@daw.com ha realitzat l'acció LOGOUT el dia 16/06/2026 a l'hora 04:23:16
+34 :: L'usuari admin@daw.com ha realitzat l'acció ACCÉS CORRECTE el dia 16/06/2026 a l'hora 04:29:12
+35 :: L'usuari admin@daw.com ha realitzat l'acció LOGOUT el dia 16/06/2026 a l'hora 04:39:19
+36 :: L'usuari admin@daw.com ha realitzat l'acció ACCÉS CORRECTE el dia 16/06/2026 a l'hora 04:39:27
+37 :: L'usuari admin@daw.com ha realitzat l'acció LOGOUT el dia 16/06/2026 a l'hora 05:09:54
+38 :: L'usuari admin@daw.com ha realitzat l'acció ACCÉS CORRECTE el dia 16/06/2026 a l'hora 05:10:33
+39 :: L'usuari a@a ha realitzat l'acció ACCÉS INCORRECTE el dia 16/06/2026 a l'hora 08:00:24
+40 :: L'usuari adriamorrio@edu.com ha realitzat l'acció ACCÉS CORRECTE el dia 16/06/2026 a l'hora 08:00:47
+41 :: L'usuari adriamorrio@edu.com ha realitzat l'acció LOGOUT el dia 16/06/2026 a l'hora 08:01:04
+42 :: L'usuari a@a ha realitzat l'acció CONTACTE el dia 16/06/2026 a l'hora 08:03:30
+43 :: L'usuari a@a ha realitzat l'acció CONTACTE el dia 16/06/2026 a l'hora 08:04:34
+44 :: L'usuari a@a ha realitzat l'acció CONTACTE el dia 16/06/2026 a l'hora 08:04:44
+45 :: L'usuari a@a ha realitzat l'acció CONTACTE el dia 16/06/2026 a l'hora 08:07:49
+46 :: L'usuari a@a ha realitzat l'acció CONTACTE el dia 16/06/2026 a l'hora 08:09:10
+47 :: L'usuari a@a ha realitzat l'acció REGISTRE el dia 16/06/2026 a l'hora 08:09:20
+48 :: L'usuari a@a ha realitzat l'acció REGISTRE el dia 16/06/2026 a l'hora 08:09:30
+49 :: L'usuari a@aaaa ha realitzat l'acció REGISTRE el dia 16/06/2026 a l'hora 08:09:41
+50 :: L'usuari a@aaaa ha realitzat l'acció REGISTRE el dia 16/06/2026 a l'hora 08:14:56
+51 :: L'usuari a@a ha realitzat l'acció REGISTRE el dia 16/06/2026 a l'hora 08:15:07
+52 :: L'usuari a@a ha realitzat l'acció REGISTRE el dia 16/06/2026 a l'hora 08:17:28
+53 :: L'usuari a@a ha realitzat l'acció REGISTRE el dia 16/06/2026 a l'hora 08:22:18
+54 :: L'usuari a@a ha realitzat l'acció REGISTRE el dia 16/06/2026 a l'hora 08:22:43
+55 :: L'usuari a@a ha realitzat l'acció REGISTRE el dia 16/06/2026 a l'hora 08:23:04
+56 :: L'usuari a@a ha realitzat l'acció REGISTRE el dia 16/06/2026 a l'hora 08:23:34
+57 :: L'usuari a@a ha realitzat l'acció REGISTRE el dia 16/06/2026 a l'hora 08:23:59
+58 :: L'usuari a@a ha realitzat l'acció REGISTRE el dia 16/06/2026 a l'hora 08:24:24
+59 :: L'usuari a@a ha realitzat l'acció REGISTRE el dia 16/06/2026 a l'hora 08:25:45
+60 :: L'usuari aasdfsafd@asdfsadf ha realitzat l'acció REGISTRE el dia 16/06/2026 a l'hora 08:26:22
+61 :: L'usuari aasdfsafd@asdfsadf ha realitzat l'acció REGISTRE el dia 16/06/2026 a l'hora 08:27:07
+62 :: L'usuari a@aasdfasdfasdfasdf ha realitzat l'acció REGISTRE el dia 16/06/2026 a l'hora 08:27:23
+63 :: L'usuari dkdkdkdkdk@slkadjf ha realitzat l'acció REGISTRE el dia 16/06/2026 a l'hora 08:27:44
+64 :: L'usuari a@a ha realitzat l'acció REGISTRE el dia 16/06/2026 a l'hora 08:29:43
+65 :: L'usuari a@a ha realitzat l'acció CONTACTE el dia 16/06/2026 a l'hora 08:29:50

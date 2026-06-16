@@ -1,4 +1,9 @@
-<?php include 'data.partial.php' ?>
+<?php
+    include 'data.partial.php'; 
+    if ($_SESSION['animalAlCarret'] !== null && $_SESSION['quantitatAnimal'] > 0) {
+        include 'carret.partial.php';
+    }    
+?>
 <header id="capsalera">
     <div id="divTitulo">
         <img src="/img/animales/tortugaTitulo.png" width="150px" height="150px">

@@ -19,6 +19,10 @@
     align-items: center;
 }
 
+.cardAnimal img {
+    width: 100%;
+}
+
 .idAnimal {
     background-color: rgb(235, 193, 103);
     border: 3px solid red;

@@ -1,7 +1,7 @@
 <?php
 
     session_start();
-
+    
     include 'funcions.php';
     include "dadesAnimals.php";
     /** @var array $dadesAnimals */
@@ -36,7 +36,8 @@
         $_SESSION['estil'] = $estil = $_SESSION['estil'] ?? 'estils.css';
     }
 
-    registreAccions('REGISTRE', $correu);
+
+    registreAccions('REGISTRE', $correu, null);
 
     if ($contrasenya === $confirmaContrasenya) {
         $missatgeInsercio = insereixUsuari($nom, $cognom, $correu, $contrasenya);

@@ -19,7 +19,7 @@
         $_SESSION['estil'] = 'estils.css';
     }
 
-    registreAccions('CONTACTE', $_SESSION['correu']);
+    registreAccions('CONTACTE', $_SESSION['correu'], null);
 
 ?>
 

@@ -10,22 +10,28 @@
     if (usuariExisteix($email)) {
         $usuari = getUser($email, $passwd);
         if (isset($usuari['error'])) {
+            registreAccions('ACCÉS INCORRECTE', $email, null);
             header('Location: ../index.php?error=connexioBD');
             die();
         } else if ($usuari === null) {
+            registreAccions('ACCÉS INCORRECTE', $email, null);
             header('Location: ../index.php?error=contrasenyaLogin');
             die();
         } else {
             $_SESSION['nomUsuari'] = $usuari['nom'];
+            $_SESSION['emailUsuari'] = $email;
+            registreAccions('ACCÉS CORRECTE', $email, null);
             if ($usuari['id'] == 1) {
                 $_SESSION['admin'] = true;
                 header('Location: ../index.php?apartat=admin');
                 die();
             }
+            
             header('Location: ../index.php');
             die();
         }
     } else {
+        registreAccions('ACCÉS INCORRECTE', $email, null);
         header('Location: ../index.php?error=correuLogin');
         die();
     }

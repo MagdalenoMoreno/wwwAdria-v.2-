@@ -22,6 +22,18 @@ if (isset($_GET['error'])) {
     $error = trim(htmlspecialchars($_GET['error']));
 }
 
+if (isset($_POST['animalAlCarret'])) {
+    $_SESSION['animalAlCarret'] = $_POST['animalAlCarret'];
+} elseif (!isset($_SESSION['animalAlCarret'])) {
+    $_SESSION['animalAlCarret'] = null;
+}
+
+if (isset($_POST['quantitatAnimal'])) {
+    $_SESSION['quantitatAnimal'] = $_POST['quantitatAnimal'];
+} elseif (!isset($_SESSION['quantitatAnimal'])) {
+    $_SESSION['quantitatAnimal'] = 0;
+}
+
 include 'include/partials/cap.partial.php';
 
 if (!isset($_SESSION['admin']) || $_SESSION['admin'] === false) {

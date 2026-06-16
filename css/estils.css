@@ -1,6 +1,10 @@
 body {
     background-image: url('/img/fondos/fondo.png');
     padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
 }
 
 #capsalera, #contenidoPrincipal, #menuNavegacio, footer {
@@ -10,6 +14,7 @@ body {
     background: linear-gradient(to right, white, lightgreen 30%, lightgreen 70%, white);
     border: 4px solid green;
     margin-bottom: 15px;
+    width: 80%;
 }
 
 #capsalera {
@@ -110,7 +115,7 @@ body {
 
 #contenidoPrincipal {
     height: auto;
-    padding: 2% 3% 2% 3%;
+    padding: 2% 0 2% 0;
 }
 
 #contenidoPrincipal > :first-child {
@@ -235,4 +240,91 @@ input:required:valid {
     font-weight: bold;
     color: red;
     text-align: center;
+}
+
+#mostrarLog {
+    margin-top: 10px;
+    background-color: lightgray;
+    border: 2px solid black;
+    border-radius: 10px;
+    text-decoration: none;  
+    color: inherit;         
+    cursor: pointer;
+    padding: 10px;
+}
+
+#logs {
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+}
+
+.spanLog {
+    border-top: 2px solid black;
+    padding: 1%;
+    text-align: center;
+}
+
+
+.logout {
+    background-color: lightblue;
+}
+
+.registre {
+    background-color: pink;
+}
+
+.contacte {
+    background-color: lightyellow;
+}
+
+.eliminar {
+    background-color: rgba(253, 0, 0, 0.63);
+}
+
+.accesCorrecte {
+    background-color: lightgreen;
+}
+
+.accesIncorrecte {
+    background-color: orange;
+}
+
+.seleccionat {
+    background-color: rgb(255, 255, 181);
+}
+
+
+
+#divCarret {
+    display: flex;
+    flex-direction: column;
+    position: fixed;
+    top: 4%;
+    left: 10px;
+    background-color: white;
+    border: 2px solid black;
+    border-radius: 10px;
+    padding: 1%;
+}
+
+#titolCarret {
+    background-color: rgb(255, 201, 201);
+    border: 3px solid red;
+    color: red;
+    padding: 1%;
+    text-align: center;
+}
+
+.informacioCarret {
+    border: 2px solid blue;
+    border-radius: 10px;
+    margin-top: 5px;
+    text-align: center;
+
+}
+
+.informacioCarret > span {
+    color: blue;
+    font-weight: bold;
 }

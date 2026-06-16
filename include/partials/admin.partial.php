@@ -1,8 +1,15 @@
 <?php
 
 
-    $success = isset($_GET["success"]) ? trim(htmlspecialchars($_GET["success"])) : null;
-    $user    = isset($_GET["user"])    ? trim(htmlspecialchars($_GET["user"]))    : null;
+    $success      = isset($_GET["success"])      ? trim(htmlspecialchars($_GET["success"])) : null;
+    $user         = isset($_GET["user"])         ? trim(htmlspecialchars($_GET["user"]))    : null;
+    $mostrarLog   = isset($_GET["mostrarLog"])   ? $_GET["mostrarLog"]                      : 'false';
+    $accions      = ['LOGOUT' => 'logout', 
+                     'REGISTRE' => 'registre', 
+                     'CONTACTE' => 'contacte', 
+                     'ELIMINAR USUARI' => 'eliminar', 
+                     'ACCÉS CORRECTE' => 'accesCorrecte', 
+                     'ACCÉS INCORRECTE' => 'accesIncorrecte']
 
 ?>
 
@@ -42,7 +49,27 @@
                     }
                 echo '</tr>';
             }
-        
         ?>
     </table>
+    <?php 
+        if ($mostrarLog === 'true') {
+            $lineas = file($_SERVER['DOCUMENT_ROOT'] . '/log/accionsUsuari.log');
+            echo '<div id="logs">';
+                foreach ($lineas as $linea) {
+                    foreach ($accions as $key => $value) {
+                        if (str_contains($linea, $key)) {
+                            echo '<span class="spanLog ' . $value . '">' . $linea . '</span>';
+                            break;
+
+                        }
+                    }
+                }
+            echo '</div>';
+            echo '<a href="/index.php?apartat=admin&mostrarLog=false" id="mostrarLog">Ocultar Logs</a>';
+        } else if ($mostrarLog === 'false') {
+            echo '<a href="/index.php?apartat=admin&mostrarLog=true" id="mostrarLog">Mostrar Logs</a>';
+        }
+    
+    ?>
+    
 </div>
